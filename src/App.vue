@@ -1,6 +1,14 @@
 <template>
   <div id="app">
-    <password-input v-model="password"></password-input>
+    <div class="panel">
+      <p class="panel-heading">Demo:</p>
+      <div class="panel-block">
+        <p class="control">
+          <label for="password">Password</label>
+          <password-input v-model="password" classes="input"></password-input>
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,12 +29,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    max-width: 600px;
+    margin: 10rem auto;
+  }
 </style>
