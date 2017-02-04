@@ -277,7 +277,9 @@
        */
       userInputs: {
         type: Array,
-        default: []
+        default () {
+          return []
+        }
       },
 
       /**

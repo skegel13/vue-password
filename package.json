@@ -1,6 +1,6 @@
 {
   "name": "vue-password",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Vue.js password input component that includes a toggle to show the password and a strength meter using the Dropbox zxcvbn library.",
   "author": "Sean Kegel <skegel13@gmail.com>",
   "keywords": [
