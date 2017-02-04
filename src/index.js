@@ -1,3 +1,3 @@
-import PasswordInput from './components/PasswordInput.vue'
+import VuePassword from './components/PasswordInput.vue'
 
-module.exports = PasswordInput
+export default VuePassword

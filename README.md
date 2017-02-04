@@ -2,6 +2,10 @@
 
 > A Vue.js password input component that includes a toggle to show the password and a strength meter using the [Dropbox zxcvbn](https://github.com/dropbox/zxcvbn) library.
 
+## Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/skegel13/vue-password/v0.0.3/vue-password.png)
+
 ## Props
 
 Use the following props to configure the password input.
