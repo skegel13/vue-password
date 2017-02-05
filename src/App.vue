@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <div class="panel">
-      <p class="panel-heading">Demo:</p>
-      <div class="panel-block">
-        <p class="control">
-          <label for="password">Password</label>
-          <password-input v-model="password" classes="input"></password-input>
-        </p>
-      </div>
-    </div>
+    <form>
+      <label for="email">Email</label>
+      <p class="control">
+          <input id="email" class="input" type="email" name="email" v-model="user.email">
+      </p>
+
+      <label for="password">Password</label>
+      <p class="control">
+          <vue-password v-model="user.password"
+                        classes="input"
+                        :user-inputs="[user.email]"
+          >
+          </vue-password>
+      </p>
+
+      <p class="control">
+          <button class="button is-primary">Register</button>
+      </p>
+    </form>
   </div>
 </template>
 
 <script>
-import PasswordInput from './components/PasswordInput'
+import VuePassword from './components/VuePassword'
 
 export default {
   name: 'app',
   components: {
-    PasswordInput
+    VuePassword
   },
   data () {
     return {
-      password: 'password'
+      user: {
+        email: '',
+        password: ''
+      }
     }
   }
 }
