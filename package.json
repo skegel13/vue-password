@@ -1,6 +1,6 @@
 {
   "name": "vue-password",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A Vue.js password input component that includes a toggle to show the password and a strength meter using the Dropbox zxcvbn library.",
   "author": "Sean Kegel <skegel13@gmail.com>",
   "keywords": [
@@ -14,8 +14,7 @@
     "zxcvbn",
     "security"
   ],
-  "private": false,
-  "main": "dist/vue-password.js",
+
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -29,8 +28,8 @@
     "url": "https://github.com/skegel13/vue-password.git"
   },
   "dependencies": {
-    "vue": "^2.1.10",
-    "zxcvbn": "^4.4.1"
+    "vue": "2.1.x",
+    "zxcvbn": "4.4.x"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

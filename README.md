@@ -108,3 +108,72 @@ Use the following props to configure the password input.
     </vue-password>
 
 ![Screenshot](https://raw.githubusercontent.com/skegel13/vue-password/v0.0.6/vue-password-slots.png)
+
+## Custom Password Strength Library
+
+The zxcvbn javascript library is fairly large, coming in at over 800kb. If you want to use a custom library, or possibly use a server-side version of zxcvbn (php, python, ruby, etc.) you can use a lighter version of vue-password that does not include zxcvbn.
+
+To use the custom vue-password:
+
+    import VuePassword from 'vue-password/dist/custom'
+
+You can then use Ajax to send the current password to the server to get a new score.
+
+The custom version adds a new prop ('score') to pass in the current score. The strength-meter and strength-message named slots also contain a strength prop to return the score instead of the zxcvbn object. The score prop must be an integer between 0 and 4.
+
+Listen for the input event on the <vue-password> element to determine when the password score should be updated.
+
+### Example
+
+#### HTML
+
+    <form>
+      <label for="email">Email</label>
+      <p class="control">
+          <input id="email" class="input" type="email" name="email" v-model="user.email">
+      </p>
+
+      <label for="password">Password</label>
+      <p class="control">
+          <vue-password v-model="user.password"
+                        classes="input"
+                        :user-inputs="[user.email]"
+                        :score="score"
+                        @input="updateScore"
+          >
+          </vue-password>
+      </p>
+
+      <p class="control">
+          <button class="button is-primary">Register</button>
+      </p>
+    </form>
+
+#### Javascript
+
+    import VuePassword from 'vue-password/dist/custom'
+
+    new Vue({
+      el: '#app',
+      components {
+        VuePassword
+      },
+      data {
+        score: 0,
+        user: {
+          email: '',
+          password: ''
+        }
+      },
+      methods: {
+        updateScore (password, userInputs) {
+          // The input event sends the current password and any included user inputs (email in this case).
+
+          // Calculate the score here either using a custom
+          // javascript library or a request to the server.
+
+          // Note: The score must be an integer between 0 and 4.
+        }
+      }
+    })
+

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <form>
+    <h1 class="title">vue-password using zxcvbn</h1>
+    <form class="box">
       <label for="email">Email</label>
       <p class="control">
           <input id="email" class="input" type="email" name="email" v-model="user.email">
@@ -19,23 +20,65 @@
           <button class="button is-primary">Register</button>
       </p>
     </form>
+
+    <h1 class="title">vue-password with custom strength</h1>
+    <form class="box">
+      <label for="email">Email</label>
+      <p class="control">
+          <input id="email" class="input" type="email" name="email" v-model="user.email">
+      </p>
+
+      <label for="password">Password</label>
+      <p class="control">
+          <vue-password-custom v-model="user.password"
+                        classes="input"
+                        :user-inputs="[user.email]"
+                        :score="score"
+                        v-on:input="getStrengthScore"
+          >
+          </vue-password-custom>
+      </p>
+
+      <p class="control">
+        <label for="score">Strength Score</label>
+        <input type="number" id="score" class="input" v-model="score" min="0" max="4">
+        <span class="help">Set the strength score (0-4). Normally, this score would come from a custom strength meter library.</span>
+        <span class="help">One use for this would be to use zxcvbn on the server to keep your javascript size small. When the input even fires, use a server request to calculate the new score.</span>
+        <span class="help">Be sure the score is an integer between 0 and 4.</span>
+
+      </p>
+
+      <p class="control">
+          <button class="button is-primary">Register</button>
+      </p>
+    </form>
   </div>
 </template>
 
 <script>
 import VuePassword from './components/VuePassword'
+import VuePasswordCustom from './components/VuePasswordCustom'
 
 export default {
   name: 'app',
   components: {
-    VuePassword
+    VuePassword,
+    VuePasswordCustom
   },
+
   data () {
     return {
       user: {
         email: '',
         password: ''
-      }
+      },
+      score: 0
+    }
+  },
+
+  methods: {
+    getStrengthScore () {
+      console.log('Recalculate the password score.')
     }
   }
 }
