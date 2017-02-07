@@ -84,6 +84,9 @@
     margin-top: .2rem;
     padding-left: .5rem;
     padding-right: .5rem;
+  }
+
+  .VuePassword__Meter path {
     stroke: currentColor;
     stroke-width: 2;
   }
