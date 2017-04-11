@@ -4,7 +4,7 @@
     <form class="box">
       <label for="email">Email</label>
       <p class="control">
-          <input id="email" class="input" type="email" name="email" v-model="user.email">
+          <input id="email" class="input" type="email" name="email" v-model="user.email" placeholder="Email">
       </p>
 
       <label for="password">Password</label>
@@ -12,6 +12,7 @@
           <vue-password v-model="user.password"
                         classes="input"
                         :user-inputs="[user.email]"
+                        placeholder="Password"
           >
           </vue-password>
       </p>
@@ -34,6 +35,7 @@
                         classes="input"
                         :user-inputs="[user.email]"
                         :score="score"
+                        pattern="[0-9]+"
                         v-on:input="getStrengthScore"
           >
           </vue-password-custom>

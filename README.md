@@ -77,7 +77,8 @@ Use the following props to configure the password input.
 | minlength | 8 | Set the minlength HTML5 validation attribute for the input element. |
 | maxlength | 200 | Set the maxlength HTML5 validation attribute for the input element. |
 | required | true | Set the required HTML5 validation attribute for the input element. |
-| pattern | '' Set the pattern HTML5 validation attribute for the input element. |
+| pattern | false | Set the pattern HTML5 validation attribute for the input element. |
+| placeholder | false | Set the placehoder attribute for the input element. |
 | strengthClasses | ['PasswordInput--very-weak', 'PasswordInput--weak', 'PasswordInput--medium', 'PasswordInput--good', 'PasswordInput--great'] | Set the classes used to style the strength message and strength meter. This should be an array of five classes. The classes are applied depending on the current strength score of the password (0-4). |
 | strengthMessages | ['Very Weak', 'Weak', 'Medium', 'Strong' 'Very Strong'] | Set the messages that appear depending on the strength score of the password. This should be an array of five messages. |
 | userInputs | [] |  Set any additional strings for improving the strength calculation. For example, add values for username or email fields so if the password contains those items, it will receive a lower strength. [Click here](https://github.com/dropbox/zxcvbn#usage) for more information. |
