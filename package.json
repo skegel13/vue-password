@@ -29,7 +29,7 @@
     "url": "https://github.com/skegel13/vue-password.git"
   },
   "dependencies": {
-    "vue": "2.1.x",
+    "vue": "2.2.x",
     "zxcvbn": "4.4.x"
   },
   "devDependencies": {
