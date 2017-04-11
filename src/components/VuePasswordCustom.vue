@@ -3,6 +3,7 @@
     <div class="VuePassword__Input">
       <input type="password"
            :name="name"
+           :placeholder="placeholder"
            :id="id"
            :class="classes"
            :value="value"
@@ -176,6 +177,14 @@
         default: 'password'
       },
 
+      /**
+       * Placeholder attribute of the password input.
+       */
+      placeholder: {
+        type: String,
+        default: 'Password'
+      },
+      
       /**
        * Classes to apply to the password input.
        */
