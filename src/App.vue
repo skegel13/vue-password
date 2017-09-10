@@ -10,6 +10,8 @@
       <label for="password">Password</label>
       <p class="control">
           <vue-password v-model="user.password"
+                        name="vue-password"
+                        id="vue-password"
                         classes="input"
                         :user-inputs="[user.email]"
                         placeholder="Password"
@@ -33,6 +35,8 @@
       <p class="control">
           <vue-password-custom v-model="user.password"
                         classes="input"
+                        name="vue-password-custom"
+                        id="vue-password-custom"
                         :user-inputs="[user.email]"
                         :score="score"
                         pattern="[0-9]+"

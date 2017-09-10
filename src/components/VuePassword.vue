@@ -2,17 +2,12 @@
   <div class="VuePassword" :title="feedback">
     <div class="VuePassword__Input">
       <input type="password"
-           :name="name"
-           :placeholder="placeholder"
-           :id="id"
-           :class="classes"
-           :value="value"
-           :minlength="minlength"
-           :maxlength="maxlength"
-           :required="required"
-           :pattern="pattern"
-           ref="input"
-           @input="updatePassword($event.target.value)"
+             :class="classes"
+             :value="value"
+             ref="input"
+             @input="updatePassword($event.target.value)"
+             v-on="$listeners"
+             v-bind="$attrs"
       >
 
       <slot name="password-toggle" v-if="!disableToggle" :toggle="togglePassword" :type="type">
@@ -126,6 +121,8 @@
   import passwordStrength from 'zxcvbn'
 
   export default{
+    inheritAttrs: false,
+
     data () {
       return {
         type: 'password',
@@ -179,30 +176,6 @@
 
     props: {
       /**
-       * ID attribute of the password input.
-       */
-      id: {
-        type: String,
-        default: 'password'
-      },
-
-      /**
-       * Name attribute of the password input.
-       */
-      name: {
-        type: String,
-        default: 'password'
-      },
-
-      /**
-       * Placeholder attribute of the password input.
-       */
-      placeholder: {
-        type: [Boolean, String],
-        default: false
-      },
-
-      /**
        * Classes to apply to the password input.
        */
       classes: {
@@ -246,42 +219,6 @@
         type: String,
         default: ''
       },
-
-      /**
-       * Set the minlength form validation attribute for the password
-       * input.
-       */
-      minlength: {
-        type: Number,
-        default: 8
-      },
-
-      /**
-       * Set the maxlength form validation attribute for the password
-       * input.
-       */
-      maxlength: {
-        type: Number,
-        default: 200
-      },
-
-      /**
-       * Set a pattern form validation attribute for the password input.
-       */
-      pattern: {
-        type: [Boolean, String],
-        default: false
-      },
-
-      /**
-       * Set the required form validation attribute for the password
-       * input.
-       */
-      required: {
-        type: Boolean,
-        default: true
-      },
-
       /**
        * Set any additional user inputs to influence the password strength
        * calculated by zxcvbn.

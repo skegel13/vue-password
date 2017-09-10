@@ -21,7 +21,7 @@ Register the component.
 
 ## Usage
 
-Use the prop in your HTML and apply a v-model attribute for the password and any additional props for the desired configuration. The following example shows how vue-password could be used in a registration form using the [Bulma CSS Framework](http://bulma.io/).
+Use the props in your HTML and apply a v-model attribute for the password and any additional props for the desired configuration. The password input uses the $attrs and $listeners attributes, so form validation props such as required, minlength, and maxlength will function on the input element. The following example shows how vue-password could be used in a registration form using the [Bulma CSS Framework](http://bulma.io/).
 
 ### Javascript
 
@@ -71,14 +71,7 @@ Use the following props to configure the password input.
 
 | Prop | Default | Description |
 | ---- | :-----: | ----------- |
-| id | 'password' | Set the ID of the input element. |
-| name | 'password' | Set the name attribute of the input element. |
 | classes | 'form-control' | Set the classes for the input element. The default is the 'form-control' class used by Twitter Bootstrap. A string or array of classes can be passed in the prop. |
-| minlength | 8 | Set the minlength HTML5 validation attribute for the input element. |
-| maxlength | 200 | Set the maxlength HTML5 validation attribute for the input element. |
-| required | true | Set the required HTML5 validation attribute for the input element. |
-| pattern | false | Set the pattern HTML5 validation attribute for the input element. |
-| placeholder | false | Set the placehoder attribute for the input element. |
 | strengthClasses | ['PasswordInput--very-weak', 'PasswordInput--weak', 'PasswordInput--medium', 'PasswordInput--good', 'PasswordInput--great'] | Set the classes used to style the strength message and strength meter. This should be an array of five classes. The classes are applied depending on the current strength score of the password (0-4). |
 | strengthMessages | ['Very Weak', 'Weak', 'Medium', 'Strong' 'Very Strong'] | Set the messages that appear depending on the strength score of the password. This should be an array of five messages. |
 | userInputs | [] |  Set any additional strings for improving the strength calculation. For example, add values for username or email fields so if the password contains those items, it will receive a lower strength. [Click here](https://github.com/dropbox/zxcvbn#usage) for more information. |
