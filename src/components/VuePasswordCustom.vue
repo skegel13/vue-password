@@ -6,8 +6,6 @@
              :value="value"
              ref="input"
              @input="updatePassword($event.target.value)"
-             v-on="$listeners"
-             v-bind="$attrs"
       >
 
       <slot name="password-toggle" v-if="!disableToggle" :toggle="togglePassword" :type="type">
