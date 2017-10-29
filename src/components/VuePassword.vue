@@ -5,8 +5,9 @@
              :class="classes"
              :value="value"
              ref="input"
+             @blur="emitBlur"
+             @focus="emitFocus"
              @input="updatePassword($event.target.value)"
-             v-on="$listeners"
              v-bind="$attrs"
       >
 
@@ -25,7 +26,7 @@
     </div>
 
     <slot name="strength-meter" v-if="!disableStrength" :strength="this.strength">
-      <svg viewBox="0 0 123 2" class="VuePassword__Meter" preserveAspectRatio="none" width="100%" height=".5rem">
+      <svg viewBox="0 0 123 2" class="VuePassword__Meter" preserveAspectRatio="none">
         <path d="M0 1 L30 1" :class="getStrengthClass(0)"></path>
         <path d="M31 1 L61 1" :class="getStrengthClass(1)"></path>
         <path d="M62 1 L92 1" :class="getStrengthClass(2)"></path>
@@ -77,9 +78,11 @@
   .VuePassword__Meter {
     color: rgb(175, 175, 175);
     display: block;
+    height: .5rem;
     margin-top: .2rem;
     padding-left: .5rem;
     padding-right: .5rem;
+    width: 100%;
   }
 
   .VuePassword__Meter path {
@@ -298,6 +301,14 @@
         }
 
         return ''
+      },
+
+      emitBlur (event) {
+        this.$emit('focus', event.target.value)
+      },
+
+      emitFocus (event) {
+        this.$emit('focus', event.target.value)
       }
     }
   }

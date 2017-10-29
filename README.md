@@ -21,7 +21,7 @@ Register the component.
 
 ## Usage
 
-Use the props in your HTML and apply a v-model attribute for the password and any additional props for the desired configuration. The password input uses the $attrs and $listeners attributes, so form validation props such as required, minlength, and maxlength will function on the input element. The following example shows how vue-password could be used in a registration form using the [Bulma CSS Framework](http://bulma.io/).
+Use the props in your HTML and apply a v-model attribute for the password and any additional props for the desired configuration. The password input uses the $attrs attributes, so form validation props such as required, minlength, and maxlength will function on the input element. The following example shows how vue-password could be used in a registration form using the [Bulma CSS Framework](http://bulma.io/).
 
 ### Javascript
 
@@ -77,6 +77,11 @@ Use the following props to configure the password input.
 | userInputs | [] |  Set any additional strings for improving the strength calculation. For example, add values for username or email fields so if the password contains those items, it will receive a lower strength. [Click here](https://github.com/dropbox/zxcvbn#usage) for more information. |
 | disableToggle | false | Disable the password input toggle to show/hide the password. |
 | disableStrength | false | Disable the password strength meter and messages. |
+
+## Events
+
+The password input emits the input, focus, and blur events. Each event is
+emitted with the current value of the password.
 
 ## Slots
 

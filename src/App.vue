@@ -13,8 +13,9 @@
                         name="vue-password"
                         id="vue-password"
                         classes="input"
-                        :user-inputs="[user.email]"
+                        minlength="8"
                         placeholder="Password"
+                        :user-inputs="[user.email]"
           >
           </vue-password>
       </p>
@@ -38,7 +39,7 @@
                         name="vue-password-custom"
                         id="vue-password-custom"
                         :user-inputs="[user.email]"
-                        :score="score"
+                        :score="parseInt(score, 10)"
                         pattern="[0-9]+"
                         v-on:input="getStrengthScore"
           >
