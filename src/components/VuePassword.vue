@@ -4,6 +4,7 @@
       <input type="password"
              :class="classes"
              :value="value"
+             :disable="disable"
              ref="input"
              @blur="emitBlur"
              @focus="emitFocus"
@@ -245,6 +246,14 @@
        * Disable the password strength.
        */
       disableStrength: {
+        type: Boolean,
+        default: false
+      },
+      
+      /**
+       * Disable the input.
+       */
+      disable: {
         type: Boolean,
         default: false
       }
