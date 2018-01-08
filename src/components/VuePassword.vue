@@ -304,7 +304,7 @@
       },
 
       emitBlur (event) {
-        this.$emit('focus', event.target.value)
+        this.$emit('blur', event.target.value)
       },
 
       emitFocus (event) {
