@@ -263,7 +263,7 @@
        * Watch for changes in the user inputs prop to update the strength score.
        */
       userInputs () {
-        this.strength = passwordStrength(this.value, this.userInputs)
+        this.strength = this.value === null ? 0 : passwordStrength(this.value, this.userInputs)
       }
     },
 
