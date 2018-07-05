@@ -30,7 +30,7 @@ Use the props in your HTML and apply a v-model attribute for the password and an
 
     new Vue({
       el: '#app',
-      components {
+      components: {
         VuePassword
       },
       data {
