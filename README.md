@@ -154,15 +154,15 @@ Listen for the input event on the <vue-password> element to determine when the p
 
     new Vue({
       el: '#app',
-      components {
-        VuePassword
+      components: {
+        VuePassword,
       },
-      data {
+      data: {
         score: 0,
         user: {
           email: '',
           password: ''
-        }
+        },
       },
       methods: {
         updateScore (password, userInputs) {
