@@ -89,9 +89,31 @@ emitted with the current value of the password.
 
 | Slot | Scope | Description |
 | ---- | ----- | ----------- |
+| password-input | <ul><li>strength: stength object provided by [zxcvbn](https://github.com/dropbox/zxcvbn#usage)</li><li>type: Current element type ('password or text')</li><li>updatePassword: Method to update the password value.</li><li>value: Current password value</li> | Use this to replace the input element. The content provided by the slot must include an input field, preferably of tpye password. |
 | password-toggle | toggle method to change the input type attribute from 'password' to 'type' | Use this named slot to change the layout of the password toggle. |
 | strength-meter | stength object provided by [zxcvbn](https://github.com/dropbox/zxcvbn#usage) | Use this named slot to change the layout of the password strength meter. |
 | strength-message | stength object provided by [zxcvbn](https://github.com/dropbox/zxcvbn#usage) | Use this named slot to change the layout of the password strength messages. |
+
+### Example: Use custom input
+
+    <vue-password v-model="user.password">
+        <div
+            slot="password-input"
+            slot-scope="props"
+            class="control has-icons-left"
+        >
+            <input
+                class="input"
+                type="password"
+                placeholder="Text input"
+                :value="props.value"
+                @input="props.updatePassword($event.target.value)"
+            >
+            <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+            </span>
+        </div>
+    </vue-password>
 
 ### Example: Change password toggle to text button
 

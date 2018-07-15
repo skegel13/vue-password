@@ -1,15 +1,25 @@
 <template>
   <div class="VuePassword" :title="feedback">
     <div class="VuePassword__Input">
-      <input type="password"
-             :class="classes"
-             :value="value"
-             ref="input"
-             @blur="emitBlur"
-             @focus="emitFocus"
-             @input="updatePassword($event.target.value)"
-             v-bind="$attrs"
+
+      <slot
+        name="password-input"
+        :strength="this.strength"
+        :toggle="togglePassword"
+        :type="type"
+        :updatePassword="updatePassword"
+        :value="value"
       >
+        <input type="password"
+              :class="classes"
+              :value="value"
+              ref="input"
+              @blur="emitBlur"
+              @focus="emitFocus"
+              @input="updatePassword($event.target.value)"
+              v-bind="$attrs"
+        >
+      </slot>
 
       <slot name="password-toggle" v-if="!disableToggle" :toggle="togglePassword" :type="type">
         <a class="VuePassword__Toggle" role="button" @click="togglePassword">
@@ -135,6 +145,16 @@
     },
 
     computed: {
+      /**
+       * Get the input field.
+       */
+      input () {
+        if (!this.$refs.input) {
+          return this.$el.querySelector('.VuePassword__Input input')
+        }
+
+        return this.$refs.input
+      },
       /**
        * Get the current password strength message.
        *
@@ -284,8 +304,8 @@
        */
       togglePassword () {
         this.type = this.type === 'password' ? 'text' : 'password'
-        this.$refs.input.setAttribute('type', this.type)
-        this.$refs.input.focus()
+        this.input.setAttribute('type', this.type)
+        this.input.focus()
       },
 
       /**
