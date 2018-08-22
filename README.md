@@ -1,3 +1,4 @@
+
 # vue-password
 
 > A Vue.js password input component that includes a toggle to show the password and a strength meter using the [Dropbox zxcvbn](https://github.com/dropbox/zxcvbn) library.
@@ -10,14 +11,18 @@
 
 Install the package using npm.
 
-    $ npm install vue-password
+```bash
+$ npm install vue-password
+```
 
 Register the component.
 
-    import Vue from 'vue'
-    import VuePassword from 'vue-password'
+```js
+import Vue from 'vue'
+import VuePassword from 'vue-password'
 
-    Vue.component(VuePassword)
+Vue.component(VuePassword)
+```
 
 ## Usage
 
@@ -25,43 +30,47 @@ Use the props in your HTML and apply a v-model attribute for the password and an
 
 ### Javascript
 
-    import Vue from 'vue'
-    import VuePassword from 'vue-password'
+```js
+import Vue from 'vue'
+import VuePassword from 'vue-password'
 
-    new Vue({
-      el: '#app',
-      components: {
-        VuePassword
-      },
-      data {
-        user: {
-          email: '',
-          password: ''
-        }
-      }
-    })
+new Vue({
+  el: '#app',
+  components: {
+    VuePassword
+  },
+  data {
+    user: {
+      email: '',
+      password: ''
+    }
+  }
+})
+```
 
 ### HTML
 
-    <form>
-      <label for="email">Email</label>
-      <p class="control">
-          <input id="email" class="input" type="email" name="email" v-model="user.email">
-      </p>
+```html
+<form>
+  <label for="email">Email</label>
+  <p class="control">
+      <input id="email" class="input" type="email" name="email" v-model="user.email">
+  </p>
 
-      <label for="password">Password</label>
-      <p class="control">
-          <vue-password v-model="user.password"
-                        classes="input"
-                        :user-inputs="[user.email]"
-          >
-          </vue-password>
-      </p>
+  <label for="password">Password</label>
+  <p class="control">
+      <vue-password v-model="user.password"
+                    classes="input"
+                    :user-inputs="[user.email]"
+      >
+      </vue-password>
+  </p>
 
-      <p class="control">
-          <button class="button is-primary">Register</button>
-      </p>
-    </form>
+  <p class="control">
+      <button class="button is-primary">Register</button>
+  </p>
+</form>
+```
 
 ![Screenshot](https://raw.githubusercontent.com/skegel13/vue-password/v0.0.6/vue-password-bulma-example.png)
 
@@ -96,37 +105,41 @@ emitted with the current value of the password.
 
 ### Example: Use custom input
 
-    <vue-password v-model="user.password">
-        <div
-            slot="password-input"
-            slot-scope="props"
-            class="control has-icons-left"
+```html
+<vue-password v-model="user.password">
+    <div
+        slot="password-input"
+        slot-scope="props"
+        class="control has-icons-left"
+    >
+        <input
+            class="input"
+            type="password"
+            placeholder="Text input"
+            :value="props.value"
+            @input="props.updatePassword($event.target.value)"
         >
-            <input
-                class="input"
-                type="password"
-                placeholder="Text input"
-                :value="props.value"
-                @input="props.updatePassword($event.target.value)"
-            >
-            <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-            </span>
-        </div>
-    </vue-password>
+        <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+        </span>
+    </div>
+</vue-password>
+```
 
 ### Example: Change password toggle to text button
 
-    <vue-password v-model="user.password">
-        <template slot="password-toggle" scope="props">
-            <button class="VuePassword__Toggle"
-                    type="button"
-                    v-on:click = "props.toggle"
-                    v-text="props.type === 'password' ? 'SHOW' : 'HIDE'"
-            >
-            </button>
-        </template>
-    </vue-password>
+```html
+<vue-password v-model="user.password">
+    <template slot="password-toggle" scope="props">
+        <button class="VuePassword__Toggle"
+                type="button"
+                v-on:click = "props.toggle"
+                v-text="props.type === 'password' ? 'SHOW' : 'HIDE'"
+        >
+        </button>
+    </template>
+</vue-password>
+```
 
 ![Screenshot](https://raw.githubusercontent.com/skegel13/vue-password/v0.0.6/vue-password-slots.png)
 
@@ -136,7 +149,9 @@ The zxcvbn javascript library is fairly large, coming in at over 800kb. If you w
 
 To use the custom vue-password:
 
-    import VuePassword from 'vue-password/dist/custom'
+```bash
+import VuePassword from 'vue-password/dist/custom'
+```
 
 You can then use Ajax to send the current password to the server to get a new score.
 
@@ -148,53 +163,56 @@ Listen for the input event on the <vue-password> element to determine when the p
 
 #### HTML
 
-    <form>
-      <label for="email">Email</label>
-      <p class="control">
-          <input id="email" class="input" type="email" name="email" v-model="user.email">
-      </p>
+```html
+<form>
+  <label for="email">Email</label>
+  <p class="control">
+      <input id="email" class="input" type="email" name="email" v-model="user.email">
+  </p>
 
-      <label for="password">Password</label>
-      <p class="control">
-          <vue-password v-model="user.password"
-                        classes="input"
-                        :user-inputs="[user.email]"
-                        :score="score"
-                        @input="updateScore"
-          >
-          </vue-password>
-      </p>
+  <label for="password">Password</label>
+  <p class="control">
+      <vue-password v-model="user.password"
+                    classes="input"
+                    :user-inputs="[user.email]"
+                    :score="score"
+                    @input="updateScore"
+      >
+      </vue-password>
+  </p>
 
-      <p class="control">
-          <button class="button is-primary">Register</button>
-      </p>
-    </form>
+  <p class="control">
+      <button class="button is-primary">Register</button>
+  </p>
+</form>
+```
 
 #### Javascript
 
-    import VuePassword from 'vue-password/dist/custom'
+```js
+import VuePassword from 'vue-password/dist/custom'
 
-    new Vue({
-      el: '#app',
-      components: {
-        VuePassword,
-      },
-      data: {
-        score: 0,
-        user: {
-          email: '',
-          password: ''
-        },
-      },
-      methods: {
-        updateScore (password, userInputs) {
-          // The input event sends the current password and any included user inputs (email in this case).
+new Vue({
+  el: '#app',
+  components: {
+    VuePassword,
+  },
+  data: {
+    score: 0,
+    user: {
+      email: '',
+      password: ''
+    },
+  },
+  methods: {
+    updateScore (password, userInputs) {
+      // The input event sends the current password and any included user inputs (email in this case).
 
-          // Calculate the score here either using a custom
-          // javascript library or a request to the server.
+      // Calculate the score here either using a custom
+      // javascript library or a request to the server.
 
-          // Note: The score must be an integer between 0 and 4.
-        }
-      }
-    })
-
+      // Note: The score must be an integer between 0 and 4.
+    }
+  }
+})
+```
