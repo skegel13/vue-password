@@ -284,6 +284,9 @@
        */
       userInputs () {
         this.strength = this.value === null ? 0 : passwordStrength(this.value, this.userInputs)
+      },
+      strength (strength) {
+        this.$emit('strength', strength.score)
       }
     },
 
