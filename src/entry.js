@@ -1,11 +1,13 @@
-// Import vue component
-import VuePassword from "./components/VuePassword.vue";
+// Import vue components
+import * as components from "./components/index";
 
 // install function executed by Vue.use()
 function install(Vue) {
     if (install.installed) return;
     install.installed = true;
-    Vue.component("VuePassword", VuePassword);
+    Object.keys(components).forEach(componentName => {
+        Vue.component(componentName, components[componentName]);
+    });
 }
 
 // Create module definition for Vue.use()
@@ -25,14 +27,12 @@ if (GlobalVue) {
     GlobalVue.use(plugin);
 }
 
-// Inject install function into component - allows component
-// to be registered via Vue.use() as well as Vue.component()
-VuePassword.install = install;
+// Default export is library as a whole, registered via Vue.use()
+export default plugin;
 
-// Export component by default
-export default VuePassword;
-
-// Add export for VuePasswordStrength
+// To allow individual component use, export components
+// each can be registered via Vue.component()
+export { default as VuePassword } from "./components/VuePassword.vue";
 export {
     default as VuePasswordStrength,
 } from "./components/VuePasswordStrength.vue";

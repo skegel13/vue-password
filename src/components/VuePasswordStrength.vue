@@ -1,5 +1,5 @@
 <script>
-const zxcvbn = require("zxcvbn");
+import zxcvbn from "zxcvbn";
 import VuePassword from "./VuePassword.vue";
 
 export default {
