@@ -18,7 +18,8 @@ export default {
         ...data.attrs,
         strength: strength.score
       },
-      on: context.listeners
+			on: context.listeners,
+			scopedSlots: context.scopedSlots,
     });
   }
 };
