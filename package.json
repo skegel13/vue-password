@@ -9,6 +9,8 @@
         "dist",
         "src"
     ],
+    "module": "src",
+    "sideEffects": false,
     "scripts": {
         "serve": "vue-cli-service serve ./demo/main",
         "build:demo": "vue-cli-service build ./demo/main",
