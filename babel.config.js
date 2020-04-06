@@ -4,7 +4,9 @@ module.exports = {
       '@babel/preset-env',
       {
         modules: false
-      },
+      }
+    ],
+    [
       "@vue/app",
       {
         useBuiltIns: false,
