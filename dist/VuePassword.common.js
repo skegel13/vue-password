@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -144,7 +144,7 @@ module.exports = require("zxcvbn");
 
 /***/ }),
 
-/***/ "fae3":
+/***/ "fb15":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -169,6 +169,7 @@ if (typeof window !== 'undefined') {
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a820fca-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=template&id=601c6563&
 var VuePasswordvue_type_template_id_601c6563_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"VuePassword"},[_c('div',{staticClass:"VuePassword__Container"},[_vm._t("password-input",[_c('input',_vm._g(_vm._b({ref:"input",class:[
@@ -560,14 +561,35 @@ var VuePasswordAuto_component = normalizeComponent(
 
 /* harmony default export */ var VuePasswordAuto = (VuePasswordAuto_component.exports);
 // CONCATENATED MODULE: ./src/index.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
 
 
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
+
+function install(Vue) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  if (options.type === "auto") {
+    Vue.component(options.name || "VuePassword", VuePasswordAuto);
+  } else {
+    Vue.component(options.name || "VuePassword", VuePassword);
+  }
+}
+
+/* harmony default export */ var src = (install);
+
+if ((typeof window === "undefined" ? "undefined" : _typeof(window)) !== undefined && window.Vue && window.Vue === external_commonjs_vue_commonjs2_vue_root_Vue_default.a) {
+  install(window.Vue);
+}
+
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport VuePassword */__webpack_require__.d(__webpack_exports__, "VuePassword", function() { return VuePassword; });
 /* concated harmony reexport VuePasswordAuto */__webpack_require__.d(__webpack_exports__, "VuePasswordAuto", function() { return VuePasswordAuto; });
 
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
 
 
 
