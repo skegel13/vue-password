@@ -11,6 +11,7 @@
     ],
     "module": "src",
     "sideEffects": [
+        "*.css",
         "*.vue"
     ],
     "scripts": {
