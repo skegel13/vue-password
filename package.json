@@ -10,7 +10,10 @@
         "src"
     ],
     "module": "src",
-    "sideEffects": false,
+    "sideEffects": [
+        "*.css",
+        "*.vue"
+    ],
     "scripts": {
         "serve": "vue-cli-service serve ./demo/main",
         "build:demo": "vue-cli-service build ./demo/main",
