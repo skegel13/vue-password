@@ -17,6 +17,7 @@
           ]"
           :title="strengthMessage"
           :value="value"
+          :type="type"
           v-bind="$attrs"
           v-on="listeners"
         />
@@ -84,7 +85,7 @@ export default {
   inheritAttrs: false,
   data() {
     return {
-      type: this.$attrs.type
+      type: this.$attrs.type ? this.$attrs.type : "password"
     };
   },
   props: {
