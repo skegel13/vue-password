@@ -198,8 +198,8 @@ if (typeof window !== 'undefined') {
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a820fca-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=template&id=40720495&
-var VuePasswordvue_type_template_id_40720495_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"VuePassword"},[_c('div',{staticClass:"VuePassword__Container"},[_vm._t("password-input",[_c('input',_vm._g(_vm._b({ref:"input",class:[
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"565a7055-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=template&id=44d82f9c&
+var VuePasswordvue_type_template_id_44d82f9c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"VuePassword"},[_c('div',{staticClass:"VuePassword__Container"},[_vm._t("password-input",[_c('input',_vm._g(_vm._b({ref:"input",class:[
           _vm.classes,
           'VuePassword__Input',
           { 'VuePassword__Input--has-toggle': !_vm.disableToggle }
@@ -207,13 +207,9 @@ var VuePasswordvue_type_template_id_40720495_render = function () {var _vm=this;
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VuePassword.vue?vue&type=template&id=40720495&
+// CONCATENATED MODULE: ./src/components/VuePassword.vue?vue&type=template&id=44d82f9c&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=script&lang=js&
-//
-//
-//
-//
 //
 //
 //
@@ -380,11 +376,6 @@ var staticRenderFns = []
       }
     }
   },
-  mounted: function mounted() {
-    if (!this.$attrs.type) {
-      this.togglePassword();
-    }
-  },
   methods: {
     /**
      * Get the current strength class based on the current strength score.
@@ -530,7 +521,7 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   components_VuePasswordvue_type_script_lang_js_,
-  VuePasswordvue_type_template_id_40720495_render,
+  VuePasswordvue_type_template_id_44d82f9c_render,
   staticRenderFns,
   false,
   null,
