@@ -17,15 +17,12 @@
           ]"
           :title="strengthMessage"
           :value="value"
+          :type="type"
           v-bind="$attrs"
           v-on="listeners"
         />
       </slot>
-      <slot
-        v-if="!disableToggle"
-        name="password-toggle"
-        :toggle="togglePassword"
-      >
+      <slot v-if="!disableToggle" name="password-toggle" :toggle="togglePassword">
         <button
           class="VuePassword__Toggle"
           :title="toggleMessage"
@@ -76,7 +73,7 @@
           :data-strength="i"
           viewBox="0 0 2 1"
         >
-          <rect width="100%" height="100%"></rect>
+          <rect width="100%" height="100%" />
         </svg>
       </div>
     </slot>
@@ -88,7 +85,7 @@ export default {
   inheritAttrs: false,
   data() {
     return {
-      type: this.$attrs.type
+      type: this.$attrs.type ? this.$attrs.type : "password"
     };
   },
   props: {
@@ -144,11 +141,7 @@ export default {
       return null;
     },
     listeners() {
-      return Object.assign(
-        {},
-        this.$listeners,
-        { input: this.updatePassword }
-      );
+      return Object.assign({}, this.$listeners, { input: this.updatePassword });
     },
     model: {
       get() {
@@ -182,11 +175,6 @@ export default {
       if (newValue != oldValue) {
         this.$emit("strength-updated", newValue);
       }
-    }
-  },
-  mounted() {
-    if (!this.$attrs.type) {
-      this.togglePassword();
     }
   },
   methods: {
