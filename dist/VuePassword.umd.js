@@ -96,10 +96,28 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
+/***/ "39ca":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VuePassword_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a59a");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VuePassword_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VuePassword_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_VuePassword_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "8bbf":
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__8bbf__;
+
+/***/ }),
+
+/***/ "a59a":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -180,14 +198,16 @@ if (typeof window !== 'undefined') {
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a820fca-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=template&id=601c6563&
-var VuePasswordvue_type_template_id_601c6563_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"VuePassword"},[_c('div',{staticClass:"VuePassword__Container"},[_vm._t("password-input",[_c('input',_vm._g(_vm._b({ref:"input",class:[
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7a820fca-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=template&id=40720495&
+var VuePasswordvue_type_template_id_40720495_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"VuePassword"},[_c('div',{staticClass:"VuePassword__Container"},[_vm._t("password-input",[_c('input',_vm._g(_vm._b({ref:"input",class:[
           _vm.classes,
           'VuePassword__Input',
           { 'VuePassword__Input--has-toggle': !_vm.disableToggle }
         ],attrs:{"title":_vm.strengthMessage},domProps:{"value":_vm.value}},'input',_vm.$attrs,false),_vm.listeners))],{"strength":this.strength,"type":_vm.type,"updatePassword":_vm.updatePassword,"value":_vm.value}),(!_vm.disableToggle)?_vm._t("password-toggle",[_c('button',{staticClass:"VuePassword__Toggle",attrs:{"title":_vm.toggleMessage,"type":"button"},on:{"click":_vm.togglePassword}},[(this.type === 'text')?_vm._t("password-hide",[_c('svg',{staticClass:"VuePassword__Toggle-Icon VuePassword__Toggle-Icon--hide",attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 20 20"}},[_c('path',{attrs:{"d":"M12.81 4.36l-1.77 1.78a4 4 0 0 0-4.9 4.9l-2.76 2.75C2.06 12.79.96 11.49.2 10a11 11 0 0 1 12.6-5.64zm3.8 1.85c1.33 1 2.43 2.3 3.2 3.79a11 11 0 0 1-12.62 5.64l1.77-1.78a4 4 0 0 0 4.9-4.9l2.76-2.75zm-.25-3.99l1.42 1.42L3.64 17.78l-1.42-1.42L16.36 2.22z"}})])]):_vm._t("password-show",[_c('svg',{staticClass:"VuePassword__Toggle-Icon VuePassword__Toggle-Icon--show",attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 20 20"}},[_c('path',{attrs:{"d":"M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"}})])])],2)],{"toggle":_vm.togglePassword}):_vm._e()],2),(!_vm.disableStrength)?_vm._t("strength-meter",[_c('div',{staticClass:"VuePassword__Meter",attrs:{"title":_vm.strengthMessage}},_vm._l((4),function(i){return _c('svg',{key:i,class:i <= _vm.strength ? _vm.strengthClass : '',attrs:{"preserveAspectRatio":"none","data-strength":i,"viewBox":"0 0 2 1"}},[_c('rect',{attrs:{"width":"100%","height":"100%"}})])}),0)],{"strength":this.strength,"strengthClass":_vm.strengthClass,"strengthClasses":_vm.strengthClasses,"strengthMessage":_vm.strengthMessage,"strengthMessages":_vm.strengthMessages}):_vm._e()],2)}
 var staticRenderFns = []
 
+
+// CONCATENATED MODULE: ./src/components/VuePassword.vue?vue&type=template&id=40720495&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VuePassword.vue?vue&type=script&lang=js&
 //
@@ -401,6 +421,9 @@ var staticRenderFns = []
 });
 // CONCATENATED MODULE: ./src/components/VuePassword.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_VuePasswordvue_type_script_lang_js_ = (VuePasswordvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/VuePassword.vue?vue&type=style&index=0&lang=css&
+var VuePasswordvue_type_style_index_0_lang_css_ = __webpack_require__("39ca");
+
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -507,7 +530,7 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   components_VuePasswordvue_type_script_lang_js_,
-  VuePasswordvue_type_template_id_601c6563_render,
+  VuePasswordvue_type_template_id_40720495_render,
   staticRenderFns,
   false,
   null,

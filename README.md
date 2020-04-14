@@ -42,6 +42,7 @@ Locally register the components.
 
 ```js
 import { VuePassword, VuePasswordAuto } from 'vue-password';
+import "vue-password/dist/VuePassword.css";
 
 export default {
     ...
@@ -53,6 +54,19 @@ export default {
 };
 ```
 
+Import the CSS
+---
+Due to Webpack tree shaking improvements, the CSS needs to be explicitly imported within your application.
+
+JavaScript
+```js
+import "vue-password/dist/VuePassword.css";
+```
+CSS
+```css
+@import "~vue-password/dist/VuePassword.css";
+```
+
 ## Usage
 
 Use the props in your HTML and apply a v-model attribute for the password and any additional props for the desired configuration. The password input uses the $attrs attributes, so form validation props such as required, minlength, and maxlength will function on the input element. The following example shows how vue-password could be used in a registration form using [Tailwind CSS](https://tailwindcss.com/).
@@ -62,6 +76,8 @@ Use the props in your HTML and apply a v-model attribute for the password and an
 ```js
 import Vue from 'vue'
 import { VuePassword } from 'vue-password'
+import "vue-password/dist/VuePassword.css";
+
 
 new Vue({
   el: '#app',
@@ -162,6 +178,7 @@ The password input emits an input event to use with v-model. Other events are bi
 
 ```js
 import { VuePassword } from 'vue-password'
+import "vue-password/dist/VuePassword.css";
 
 new Vue({
     el: '#app',

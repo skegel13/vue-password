@@ -15,6 +15,6 @@ module.exports = {
     externals
   },
   css: {
-    extract: false
+    extract: true
   }
 };
