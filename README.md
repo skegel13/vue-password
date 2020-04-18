@@ -22,6 +22,12 @@ An optional `VuePasswordAuto` component is also included. This component require
 npm install --save zxcvbn
 ```
 
+zxcvbn can also be used from a CDN by adding this script to your html before your Vue scripts.
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js" integrity="sha256-Znf8FdJF85f1LV0JmPOob5qudSrns8pLPZ6qkd/+F0o=" crossorigin="anonymous"></script>
+```
+
 > The Dropbox zxcvbn library is very large at over 900kb, so it is no longer included by default.
 
 Globally register the component.

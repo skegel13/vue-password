@@ -186,7 +186,7 @@ export default {
   },
   mounted() {
     if (!this.$attrs.type) {
-      this.togglePassword();
+      this.togglePassword(false);
     }
   },
   methods: {
@@ -205,10 +205,13 @@ export default {
     /**
      * Toggle the visibilty of the password.
      */
-    togglePassword() {
+    togglePassword(focus = true) {
       this.type = this.type === "password" ? "text" : "password";
       this.inputElement.setAttribute("type", this.type);
-      this.inputElement.focus();
+
+      if (focus) {
+        this.inputElement.focus();
+      }
     },
     /**
      * Update the password input.

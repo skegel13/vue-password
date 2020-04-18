@@ -30,7 +30,6 @@
       to set the level of the strength meter.
     </p>
 
-
     <h2 class="mb-3 text-lg">Vue Password with Dropbox zxcvbn Library</h2>
     <div class="mb-6">
       <label for="password">Password</label>
@@ -52,6 +51,10 @@
       the password strength, install the zxvbn libary and use the
       VuePasswordAuto component.
     </p>
+    <p>It is also possible to use zxcvbn from a CDN. Add the following script tag before your app loads.</p>
+    <div class="mb-6">
+      <pre class="border border-gray-400 rounded shadow-md"><code class="language-html" v-html="zxcvbnScript"></code></pre>
+    </div>
     <p class="bg-white border border-red-600 mb-4 p-4 rounded shadow">
       <strong>Please note:</strong> The Dropbox zxcvbn library is very large at roughly
       900 kb. It is recommended to use your own library or a server-side library
@@ -122,7 +125,7 @@ export default {
   },
   ...
 };`,
-
+      zxcvbnScript: '&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js&quot; integrity=&quot;sha256-Znf8FdJF85f1LV0JmPOob5qudSrns8pLPZ6qkd/+F0o=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;'
     };
   },
   mounted() {
