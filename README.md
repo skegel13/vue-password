@@ -1,10 +1,11 @@
-# vue-password 2.x
-
-> A Vue.js password input component that includes a toggle to show the password and a strength meter using the [Dropbox zxcvbn](https://github.com/dropbox/zxcvbn) library.
+# vue-password 3.x
 
 [View Demo](https://codesandbox.io/s/vue-template-t1vmc?fontsize=14)
 
-> **Please note**, the password has various breaking changes in the 2.x version compared to 1.x.
+> **Please note**, VuePassword 3.x removes support for the zxcvbn library. The
+> library appears to no longer be maintained. If you would still like to use it,
+> you can still pull in the library and pass the VuePassword value to it to
+> calculate the strength. Examples coming soon.
 
 ## Install
 
@@ -14,40 +15,19 @@ Install the package using npm.
 npm install --save vue-password
 ```
 
-vue-password includes two components. The default `VuePassword` component requires a custom strength library and value passed to the component using the `:strength` property.
-
-An optional `VuePasswordAuto` component is also included. This component requires the Dropbox zxcvbn library to be added and will automatically calculate the strength of the password.
-
-```bash
-npm install --save zxcvbn
-```
-
-> The Dropbox zxcvbn library is very large at over 900kb, so it is no longer included by default.
-
-Globally register the component.
+The `VuePassword` component adds support for a toggle to hide and show the
+password as well as a meter to show the current strength of the password.
+This component does not automatically calculate the strength, however, a library
+like [zxcvbn](https://github.com/dropbox/zxcvbn) can be used to pass the
+strength values as props.
 
 ```js
-import VuePassword from 'vue-password'
-
-Vue.component(
-    VuePassword,
-    {
-        name: 'MyPassword', // Optional component name.
-        type: 'auto', // Use the auto version with zxcvbn.
-    }
-);
-```
-
-Locally register the components.
-
-```js
-import { VuePassword, VuePasswordAuto } from 'vue-password';
+import VuePassword from 'vue-password';
 
 export default {
     ...
     components: {
         VuePassword,
-        VuePasswordAuto,
     },
     ...
 };
@@ -61,7 +41,7 @@ Use the props in your HTML and apply a v-model attribute for the password and an
 
 ```js
 import Vue from 'vue'
-import { VuePassword } from 'vue-password'
+import VuePassword from 'vue-password'
 
 new Vue({
   el: '#app',
@@ -104,7 +84,6 @@ Use the following props to configure the password input.
 | disableToggle | false | Disable the password input toggle to show/hide the password. |
 | strengthClasses | ['VuePassword--very-weak', 'VuePassword--weak', 'VuePassword--medium', 'VuePassword--good', 'VuePassword--great'] | Set the classes used to style the strength message and strength meter. This should be an array of five classes. The classes are applied depending on the current strength score of the password (0-4). |
 | strengthMessages | ['Very Weak Password', 'Weak Password', 'Medium Password', 'Strong Password' 'Very Strong Password'] | Set the messages that appear depending on the strength score of the password. This should be an array of five messages. |
-| userInputs | [] |  **VuePasswordAuto Only** <br/>Set any additional strings for improving the strength calculation. For example, add values for username or email fields so if the password contains those items, it will receive a lower strength. [Click here](https://github.com/dropbox/zxcvbn#usage) for more information. |
 
 ## Events
 
@@ -161,7 +140,7 @@ The password input emits an input event to use with v-model. Other events are bi
 #### Javascript
 
 ```js
-import { VuePassword } from 'vue-password'
+import VuePassword from 'vue-password'
 
 new Vue({
     el: '#app',
