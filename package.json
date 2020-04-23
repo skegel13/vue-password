@@ -1,6 +1,6 @@
 {
     "name": "vue-password",
-    "version": "2.0.4",
+    "version": "3.0.0",
     "main": "dist/VuePassword.umd.js",
     "broswer": "dist/VuePassword.common.js",
     "unpkg": "dist/VuePassword.umd.min.js",
@@ -9,8 +9,6 @@
         "dist",
         "src"
     ],
-    "module": "src",
-    "sideEffects": false,
     "scripts": {
         "serve": "vue-cli-service serve ./demo/main",
         "build:demo": "vue-cli-service build ./demo/main",
@@ -18,9 +16,6 @@
         "lint": "vue-cli-service lint",
         "test:e2e": "vue-cli-service test:e2e",
         "test:unit": "vue-cli-service test:unit"
-    },
-    "peerDependencies": {
-        "zxcvbn": "^4.4.2"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.7.0",
@@ -38,8 +33,5 @@
         "eslint-plugin-vue": "^5.0.0",
         "vue": "^2.6.10",
         "vue-template-compiler": "^2.5.21"
-    },
-    "dependencies": {
-        "zxcvbn": "^4.4.2"
     }
 }

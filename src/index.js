@@ -1,19 +1,27 @@
 import Vue from "vue";
 import VuePassword from "./components/VuePassword.vue";
-import VuePasswordAuto from "./components/VuePasswordAuto.vue";
 
-function install(Vue, options = {}) {
-  if (options.type === "auto") {
-    Vue.component(options.name || "VuePassword", VuePasswordAuto);
-  } else {
-    Vue.component(options.name || "VuePassword", VuePassword);
-  }
+function install(Vue) {
+  if (install.installed) return;
+  install.installed = true;
+  Vue.component("VuePassword", VuePassword);
 }
 
-export default install;
+const plugin = {
+  install
+};
 
-if (typeof window !== undefined && window.Vue && window.Vue === Vue) {
-  install(window.Vue);
+let GlobalVue = null;
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+} else if (typeof global !== "undefined") {
+  GlobalVue = global.vue;
+}
+if (GlobalVue) {
+  GlobalVue.use(plugin);
 }
 
-export { VuePassword, VuePasswordAuto };
+VuePassword.install = install;
+
+export default VuePassword;
+
