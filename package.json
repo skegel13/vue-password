@@ -1,6 +1,6 @@
 {
     "name": "vue-password",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "main": "dist/VuePassword.umd.js",
     "broswer": "dist/VuePassword.common.js",
     "unpkg": "dist/VuePassword.umd.min.js",
